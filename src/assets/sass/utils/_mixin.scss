@@ -1,0 +1,192 @@
+@charset "UTF-8";
+@import "../utils/var";
+
+@mixin customScroll($direction, $invisible: false){
+  -ms-overflow-style: none;
+
+  /*!-------------------세로 스크롤*/
+  @if($direction == scroll-y){
+    overflow-x: hidden;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 10px;
+      transition: .2s;
+    }
+
+    &::-webkit-scrollbar-button{
+      height: 3px;
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 8px 10px 10px 8px;
+      background: #d7dde4;
+      background-clip: padding-box;
+      border: 2px solid transparent;
+      border-right-width: 4px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #9da3ad;
+      border-radius: 8px 10px 10px 8px;
+      height: 40%;
+      transition: .2s;
+      background-clip: padding-box !important;
+      border: 2px solid transparent;
+      border-right-width: 4px;
+
+      &:hover{
+        background: #757981;
+      }
+    }
+  }
+
+  /*!-------------------가로 스크롤*/
+  @if($direction == scroll-x) {
+    overflow-y: hidden;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      height: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 6px;
+      //background: #faf9fe;
+      background: transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background-color: #d7dde4;
+      border-radius: 6px;
+
+      &:hover {
+        background: #9da3ad;
+      }
+    }
+  }
+
+
+  /*!-------------------마우스 오버 시에 나타나는 스크롤*/
+  @if $invisible{
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      //background: #8d8d8d;
+    }
+
+    /*!-------------------마우스 오버 가로 스크롤*/
+    @if($direction == scroll-x){
+      &::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        border-radius: 6px;
+        background: #faf9fe;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background-color: #d7dde4;
+        border-radius: 6px;
+
+        &:hover {
+          background: #9da3ad;
+        }
+      }
+    }
+
+    /*!-------------------마우스 오버 세로 스크롤*/
+    @if($direction == scroll-y){
+      &::-webkit-scrollbar {
+        width: 8px;
+        transition: .2s;
+      }
+
+      &::-webkit-scrollbar-button{
+        height: 3px;
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-track {
+        border-radius: 5px;
+        background: transparent;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+        border-radius: 5px;
+        height: 5px;
+      }
+    }
+
+    &:hover{
+      transition: .2s;
+
+      &::-webkit-scrollbar-track:hover{
+        background: #faf9fe;
+        background-clip: padding-box;
+        border: 2px solid transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        transition: .2s;
+        background: #d7dde4;
+        background-clip: padding-box;
+        border: 2px solid transparent;
+
+        &:hover{
+          background: #9da3ad;
+          background-clip: padding-box;
+          border: 2px solid transparent;
+        }
+      }
+    }
+  }
+}
+
+/*!-------------------한줄 말줄임*/
+@mixin ellipsis{
+  //width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*!-------------------여러줄 말줄임*/
+@mixin multi-ellipsis($height,$line, $bg){
+  line-height: $height;
+  max-height: $height * $line;
+  overflow: hidden;
+  position: relative;
+  background-color: $bg;
+
+  &:before {
+    content: " ...";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 1rem;
+    height: 1rem;
+    background-color: $bg;
+  }
+}
+
+//-------------------- Animation
+@keyframes fadeIn{
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes moveDown{
+  from { transform: translateY(-10%); }
+  to { transform: translateY(0); }
+}
