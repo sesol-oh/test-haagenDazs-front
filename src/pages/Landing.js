@@ -4,12 +4,16 @@ import "../assets/sass/layout/layout.scss";
 
 // img
 import img1 from "../assets/images/logo.png";
-import img2 from "../assets/images/ham.png";
 import img3 from "../assets/images/pecan.png";
 import img4 from "../assets/images/salted.png";
 import img5 from "../assets/images/vanlla.png";
 import img6 from "../assets/images/twist1.png";
 import img7 from "../assets/images/twist2.png";
+
+import lime from "../assets/images/lime.png";
+import pinacolada from "../assets/images/pinacolada.png";
+import dark from "../assets/images/dark.png";
+import cookies from "../assets/images/cookies.png";
 
 const Landing = () => {
   return (
@@ -29,7 +33,7 @@ const Landing = () => {
               <img src={img1} alt="하겐다즈 로고" />
             </a>
             <a className="m_menu">
-              <img src={img2} alt="모바일 메뉴버튼" />
+              {/*<img src={img2} alt="모바일 메뉴버튼" />*/}
             </a>
             <div className="m_nav">
               <p>HAAGEN DAZS</p>
@@ -41,6 +45,7 @@ const Landing = () => {
                   <ul className="m_submenu1">
                     <li>신메뉴</li>
                     <li>파인트</li>
+                    <li>미니컵</li>
                     <li>미니컵</li>
                     <li>스틱바/샌드</li>
                     <li>콘/벌크</li>
@@ -260,7 +265,7 @@ const Landing = () => {
           <div className="swiper">
             <div className="swiper-wrapper">
               <div className="swiper-slide">
-                {/*<img src="img/lime.png" alt="라임">*/}
+                <img src={lime} alt="라임" />
                 <p>
                   {" "}
                   LIME MOJITO
@@ -269,14 +274,14 @@ const Landing = () => {
                 </p>
               </div>
               <div className="swiper-slide">
-                {/*<img src="img/pinacolada.png" alt="피나콜라다">*/}
+                <img src={pinacolada} alt="피나콜라다" />
                 <p>
                   {" "}
                   PINA COLADA <br /> 피나콜라다
                 </p>
               </div>
               <div className="swiper-slide">
-                {/*<img src="img/dark.png" alt="다크초콜릿">*/}
+                <img src={dark} alt="다크초콜릿" />
                 <p>
                   {" "}
                   CHOCOLATE&amp;ALMOND
@@ -285,7 +290,7 @@ const Landing = () => {
                 </p>
               </div>
               <div className="swiper-slide">
-                {/*<img src="img/cookies.png" alt="쿠키앤크림">*/}
+                <img src={cookies} alt="쿠키앤크림" />
                 <p>
                   {" "}
                   COOKIES&amp;CREAM <br />
@@ -293,6 +298,7 @@ const Landing = () => {
                 </p>
               </div>
               <div className="swiper-slide">
+                <img src={lime} alt="라임" />
                 {/*<img src="img/green.png" alt="그린티녹차">*/}
                 <p>
                   GREEN TEA <br />
@@ -300,6 +306,7 @@ const Landing = () => {
                 </p>
               </div>
               <div className="swiper-slide">
+                <img src={pinacolada} alt="피나콜라다" />
                 {/*<img src="img/maca.png" alt="마카다미아">*/}
                 <p>
                   MACADAMIA NUT
@@ -307,6 +314,7 @@ const Landing = () => {
                 </p>
               </div>
               <div className="swiper-slide">
+                <img src={cookies} alt="쿠키앤크림" />
                 {/*<img src="img/mango.png" alt="망고">*/}
                 <p>
                   {" "}
@@ -314,6 +322,7 @@ const Landing = () => {
                 </p>
               </div>
               <div className="swiper-slide">
+                <img src={lime} alt="라임" />
                 {/*<img src="img/melon.png" alt="멜론">*/}
                 <p>
                   {" "}
@@ -325,7 +334,7 @@ const Landing = () => {
             </div>
           </div>
           <div className="but">
-            <div className="s_left swiper-button-prev"> </div>
+            <div className="s_left swiper-button-prev"></div>
             {/*구매하러 가기 BUY*/}
             <div className="s_right swiper-button-next"></div>
           </div>
